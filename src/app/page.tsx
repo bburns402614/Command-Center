@@ -6,6 +6,7 @@ import { initialTasks } from '@/lib/data';
 import TasksView from '@/components/TasksView';
 import RoadmapView from '@/components/RoadmapView';
 import NewTaskView from '@/components/NewTaskView';
+import StatusView from '@/components/StatusView';
 
 const NAV_H = 58;
 
@@ -13,6 +14,7 @@ const tabs: { id: Tab; label: string }[] = [
   { id: 'tasks', label: 'Tasks' },
   { id: 'roadmap', label: 'Roadmap' },
   { id: 'new-task', label: '+ New Task' },
+  { id: 'status', label: 'Status' },
 ];
 
 export default function Page() {
@@ -114,6 +116,7 @@ export default function Page() {
         {tab === 'new-task' && (
           <NewTaskView onCreate={createTask} onToast={showToast} />
         )}
+        {tab === 'status' && <StatusView onToast={showToast} />}
       </main>
 
       {/* Toast */}
