@@ -1,0 +1,237 @@
+import { Task, Epic, BacklogItem } from './types';
+
+export const initialTasks: Task[] = [
+  {
+    id: 1,
+    name: 'Finish Marketing & Sales Enhancements',
+    priority: '1-Critical',
+    status: 'In Progress',
+    owner: '',
+    notes: 'Move email opt-in; pass application step; improve FICO passing',
+  },
+  {
+    id: 2,
+    name: 'ECOA / FCRA Process',
+    priority: '1-Critical',
+    status: 'In Progress',
+    owner: 'Lori/Bre',
+    notes: '',
+  },
+  {
+    id: 3,
+    name: 'Add PIF/current loan check based on EIN & SSN',
+    priority: '1-Critical',
+    status: 'In Progress',
+    owner: 'Bre',
+    notes: '',
+    jiraKey: 'DS-1202',
+  },
+  {
+    id: 4,
+    name: 'NB reporting changes in Zoltar',
+    priority: '1-Critical',
+    status: 'In Progress',
+    owner: 'Bre/Dev',
+    notes: '',
+    jiraKey: 'DS-1060',
+  },
+  {
+    id: 5,
+    name: 'Modify offer email',
+    priority: '2-Important',
+    status: 'In Progress',
+    owner: 'Brenden',
+    notes: '',
+  },
+  {
+    id: 6,
+    name: 'UW Operational Process',
+    priority: '2-Important',
+    status: 'In Progress',
+    owner: 'Shannon',
+    notes: '',
+  },
+  {
+    id: 7,
+    name: 'HighCrest Process',
+    priority: '2-Important',
+    status: 'Not Started',
+    owner: 'Shannon/RG/Bre',
+    notes: '',
+  },
+  {
+    id: 8,
+    name: 'Modify NJ State Rules',
+    priority: '2-Important',
+    status: 'Not Started',
+    owner: 'Engineering',
+    notes: '',
+    linearId: 'IOU-53',
+  },
+  {
+    id: 9,
+    name: 'Update application confirmation screen',
+    priority: '2-Important',
+    status: 'Not Started',
+    owner: 'Engineering',
+    notes: '',
+    jiraKey: 'DS-1268',
+  },
+  {
+    id: 10,
+    name: 'Pass institution_id in Plaid payload',
+    priority: '2-Important',
+    status: 'Not Started',
+    owner: 'Tabish',
+    notes: '',
+    jiraKey: 'DS-1141',
+  },
+  {
+    id: 11,
+    name: 'Sentilink',
+    priority: '2-Important',
+    status: 'Done',
+    owner: 'Bre/Shannon',
+    notes: '',
+  },
+  {
+    id: 12,
+    name: 'BGA Turn down process',
+    priority: '2-Important',
+    status: 'Done',
+    owner: 'Bre/BGA',
+    notes: '',
+    jiraKey: 'DS-586',
+  },
+];
+
+export const initialEpics: Epic[] = [
+  {
+    id: 1,
+    name: 'Direct App — Applicant Experience',
+    status: 'In Progress',
+    quarter: 'Q2 2026',
+    features: [
+      { name: 'Confirmation screen redesign', detail: '', jiraKey: 'DS-1268' },
+      { name: 'ECOA/FCRA decline process', detail: '' },
+      { name: 'Email merchant consent', detail: '', jiraKey: 'DS-1119' },
+      { name: 'Marketing & sales enhancements', detail: '' },
+    ],
+  },
+  {
+    id: 2,
+    name: 'Lendflow Integration',
+    status: 'In Progress',
+    quarter: 'Q2 2026',
+    features: [
+      { name: 'institution_id in Plaid', detail: '', jiraKey: 'DS-1141' },
+      { name: 'Fix offer acceptance', detail: '', jiraKey: 'DS-1111' },
+      { name: 'Correct BGA as loan officer', detail: '', jiraKey: 'DS-1112' },
+      { name: 'Referral partner management', detail: '', jiraKey: 'DS-1074' },
+    ],
+  },
+  {
+    id: 3,
+    name: 'Compliance & State Rules',
+    status: 'In Progress',
+    quarter: 'Q2 2026',
+    features: [
+      { name: 'Remove Nevada/Montana hard-coding', detail: '', jiraKey: 'DS-1059' },
+      { name: 'NJ state configuration', detail: '', linearId: 'IOU-53' },
+      { name: 'DOA credit fallback', detail: '', jiraKey: 'DS-1060' },
+    ],
+  },
+  {
+    id: 4,
+    name: 'Broker Portal — Loan Officer Selection',
+    status: 'Planned',
+    quarter: 'Q3 2026',
+    features: [
+      { name: 'Broker selects LO', detail: '', jiraKey: 'DS-1153' },
+      { name: 'LO in broker emails', detail: '', jiraKey: 'DS-1156' },
+    ],
+  },
+  {
+    id: 5,
+    name: 'Referral Partner Attribution',
+    status: 'Planned',
+    quarter: 'Q3 2026',
+    features: [
+      { name: 'UTM Source to Salesforce', detail: '', jiraKey: 'DS-1204' },
+      { name: 'Slug-based routing', detail: '' },
+    ],
+  },
+  {
+    id: 6,
+    name: 'PIF Loan Routing',
+    status: 'Planned',
+    quarter: 'Q3 2026',
+    features: [
+      { name: 'Merchant lookup with date param', detail: '', jiraKey: 'DS-1202' },
+      { name: 'LendFlow PIF routing logic', detail: '' },
+    ],
+  },
+  {
+    id: 7,
+    name: 'ISO Parsing & Claude Integration',
+    status: 'Planned',
+    quarter: 'Q4 2026',
+    features: [
+      { name: 'Claude ISO doc parsing', detail: '' },
+      { name: 'LO field via ISO extraction', detail: '' },
+    ],
+  },
+  {
+    id: 8,
+    name: 'Underwriting Operations',
+    status: 'Planned',
+    quarter: 'Q4 2026',
+    features: [
+      { name: 'HighCrest process integration', detail: '' },
+      { name: 'UW operational tooling', detail: '' },
+    ],
+  },
+  {
+    id: 9,
+    name: 'Platform Cleanup',
+    status: 'Planned',
+    quarter: 'Q4 2026',
+    features: [
+      { name: 'BrokerageTeam/NUKE-615 assessment', detail: '' },
+      { name: 'Admin panel UX polish', detail: '' },
+    ],
+  },
+];
+
+export const initialBacklog: BacklogItem[] = [
+  {
+    id: 1,
+    name: 'Automated UW decisioning rules engine',
+    detail: 'Replace manual UW steps with configurable rule triggers',
+  },
+  {
+    id: 2,
+    name: 'Merchant-facing application status portal',
+    detail: 'Let merchants check status without calling in',
+  },
+  {
+    id: 3,
+    name: 'Bulk document upload for brokers',
+    detail: 'Allow batch ISO uploads',
+  },
+  {
+    id: 4,
+    name: 'Plaid auth fallback to voided check flow',
+    detail: 'Graceful degradation when Plaid /auth/get unavailable',
+  },
+  {
+    id: 5,
+    name: 'BGA commission reporting dashboard',
+    detail: 'Replace manual spreadsheet tracking',
+  },
+  {
+    id: 6,
+    name: 'Two-way Lendflow status sync',
+    detail: 'Auto-update Lendflow when Lending status changes',
+  },
+];
