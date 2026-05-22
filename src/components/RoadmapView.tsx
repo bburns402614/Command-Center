@@ -106,22 +106,26 @@ export default function RoadmapView({ onToast }: Props) {
     }));
 
   return (
-    <div style={{ maxWidth: 1140, margin: '0 auto', padding: '36px 24px 64px' }}>
-      {/* Header */}
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 36 }}>
-        <div>
-          <h1 style={{ fontFamily: 'var(--font-dm-serif)', fontSize: 32, fontWeight: 400, color: '#1a1714', margin: 0, lineHeight: 1.2 }}>
-            Product Roadmap
-          </h1>
-          <p style={{ margin: '6px 0 0', color: '#6b6560', fontSize: 14 }}>Quarterly epics and features — IOU Financial</p>
+    <>
+      {/* Dark header band */}
+      <div style={{ background: '#1a1714', padding: '36px 0 32px' }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+          <div>
+            <h1 style={{ fontFamily: 'var(--font-dm-serif)', fontSize: 32, fontWeight: 400, color: '#fff', margin: 0, lineHeight: 1.2 }}>
+              Product Roadmap
+            </h1>
+            <p style={{ margin: '6px 0 0', color: 'rgba(255,255,255,0.6)', fontSize: 14 }}>Quarterly epics and features — IOU Financial</p>
+          </div>
+          <button
+            onClick={() => setShowEpicForm((v) => !v)}
+            style={{ ...btnBase, background: showEpicForm ? '#fff' : 'rgba(255,255,255,0.12)', color: showEpicForm ? '#1a1714' : '#fff', border: '1px solid rgba(255,255,255,0.25)', fontWeight: 600 }}
+          >
+            {showEpicForm ? '✕ Cancel' : '+ Add epic'}
+          </button>
         </div>
-        <button
-          onClick={() => setShowEpicForm((v) => !v)}
-          style={{ ...btnBase, background: showEpicForm ? '#1a1714' : '#fff', color: showEpicForm ? '#fff' : '#1a1714', border: '1px solid #1a1714', fontWeight: 600 }}
-        >
-          {showEpicForm ? '✕ Cancel' : '+ Add epic'}
-        </button>
       </div>
+
+      <div style={{ maxWidth: 1140, margin: '0 auto', padding: '36px 24px 64px' }}>
 
       {/* Epic form */}
       {showEpicForm && (
@@ -279,6 +283,7 @@ export default function RoadmapView({ onToast }: Props) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
