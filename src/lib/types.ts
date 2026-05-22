@@ -1,6 +1,6 @@
 export type Priority = '1-Critical' | '2-Important' | '3-Normal';
 export type TaskStatus = 'Not Started' | 'In Progress' | 'Blocked' | 'Done';
-export type Tab = 'tasks' | 'roadmap' | 'new-task' | 'status';
+export type Tab = 'tasks' | 'roadmap' | 'new-task' | 'status' | 'pm-brain';
 export type Filter = 'all' | 'active' | 'done';
 export type Quarter = 'Q2 2026' | 'Q3 2026' | 'Q4 2026';
 export type EpicStatus = 'Planned' | 'In Progress' | 'In Review' | 'Done';

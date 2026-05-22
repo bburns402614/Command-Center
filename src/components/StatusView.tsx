@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { StatusUpdate } from '@/lib/types';
+import { StatusUpdate, Task } from '@/lib/types';
 
 type OverallStatus = 'On Track' | 'At Risk' | 'Blocked';
 
@@ -95,10 +95,12 @@ const EMPTY_FORM = {
 };
 
 interface Props {
+  tasks?: Task[];
   onToast: (msg: string) => void;
 }
 
-export default function StatusView({ onToast }: Props) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function StatusView({ tasks: _tasks, onToast }: Props) {
   const [updates, setUpdates] = useState<StatusUpdate[]>(SEED_UPDATES);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ ...EMPTY_FORM, title: currentWeekTitle() });
