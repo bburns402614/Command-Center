@@ -118,7 +118,7 @@ export default function PMAssistantView() {
   const showEmpty = messages.length === 0 && !streaming;
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 58px)' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       {/* Dark header */}
       <div style={{ background: '#1a1714', padding: '36px 0 32px', flexShrink: 0 }}>
         <div style={{ maxWidth: 820, margin: '0 auto', padding: '0 24px' }}>
